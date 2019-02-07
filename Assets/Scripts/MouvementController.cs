@@ -10,6 +10,8 @@ public class MouvementController : MonoBehaviour
     Vector3 offsetValue;
     Vector3 positionOfScreen;
 
+    public int forbidenDistance;
+
     // Use this for initialization
     void Start()
     {
@@ -24,7 +26,7 @@ public class MouvementController : MonoBehaviour
         {
             RaycastHit hitInfo;
             getTarget = ReturnClickedObject(out hitInfo);
-            if (getTarget != null)
+            if ((getTarget != null) && (getTarget.tag == "Atomium"))
             {
                 isMouseDragging = true;
                 //Converting world position to screen position.
