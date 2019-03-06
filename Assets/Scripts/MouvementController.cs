@@ -4,69 +4,50 @@ using UnityEngine;
 
 public class MouvementController : MonoBehaviour
 {
-    //Initialize Variables
-    GameObject getTarget;
-    bool isMouseDragging;
-    Vector3 offsetValue;
-    Vector3 positionOfScreen;
-
-    public int forbidenDistance;
+    // Déclaration des variables
+    public float hitDistance;
+    private bool lockAtome = false;
 
     // Use this for initialization
     void Start()
     {
-
+        
     }
 
+    // Update is called once per frame
     void Update()
     {
+        // Activation du raycast
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        //Mouse Button Press Down
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit hitInfo;
-            getTarget = ReturnClickedObject(out hitInfo);
-            if ((getTarget != null) && (getTarget.tag == "Atomium"))
+        if (Physics.Raycast(ray, out hit))
+        { 
+
+            Transform objectHit = hit.transform;
+
+            // Déplacement de l'atome sur le curseur
+            if (Input.GetMouseButton(0))
             {
-                isMouseDragging = true;
-                //Converting world position to screen position.
-                positionOfScreen = Camera.main.WorldToScreenPoint(getTarget.transform.position);
-                offsetValue = getTarget.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, positionOfScreen.z));
+                lockAtome = true;
+            }
+            else
+            {
+                lockAtome = false;
             }
         }
 
-        //Mouse Button Up
-        if (Input.GetMouseButtonUp(0))
+        if(lockAtome == true)
         {
-            isMouseDragging = false;
+            AtomeMove();
         }
-
-        //Is mouse Moving
-        if (isMouseDragging)
-        {
-            //tracking mouse position.
-            Vector3 currentScreenSpace = new Vector3(Input.mousePosition.x, Input.mousePosition.y, positionOfScreen.z);
-
-            //converting screen position to world position with offset changes.
-            Vector3 currentPosition = Camera.main.ScreenToWorldPoint(currentScreenSpace) + offsetValue;
-
-            //It will update target gameobject's current postion.
-            getTarget.transform.position = currentPosition;
-        }
-
-
     }
 
-    //Method to Return Clicked Object
-    GameObject ReturnClickedObject(out RaycastHit hit)
+    void AtomeMove()
     {
-        GameObject target = null;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray.origin, ray.direction * 10, out hit))
-        {
-            target = hit.collider.gameObject;
-        }
-        return target;
+        var v3 = Input.mousePosition;
+        v3.z = 10f;
+        v3 = Camera.main.ScreenToWorldPoint(v3);
+        transform.position = v3;
     }
-
 }
