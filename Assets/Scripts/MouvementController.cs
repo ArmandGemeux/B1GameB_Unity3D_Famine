@@ -46,7 +46,7 @@ public class MouvementController : MonoBehaviour
     void AtomeMove()
     {
         var v3 = Input.mousePosition;
-        v3.z = 10f;
+        v3.z = 0f;
         v3 = Camera.main.ScreenToWorldPoint(v3);
         transform.position = v3;
     }
