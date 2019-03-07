@@ -4,50 +4,66 @@ using UnityEngine;
 
 public class MouvementController : MonoBehaviour
 {
-    // Déclaration des variables
-    public float hitDistance;
-    private bool lockAtome = false;
+    GameObject getTarget;
+    bool isMouseDragging;
+    Vector3 offsetValue;
+    Vector3 positionOfScreen;
+    public int forbidenDistance;
 
-    // Use this for initialization
     void Start()
     {
-        
-    }
 
-    // Update is called once per frame
+    }
     void Update()
     {
-        // Activation du raycast
-        RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hit))
-        { 
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            AddInList();
+        }
 
-            Transform objectHit = hit.transform;
-
-            // Déplacement de l'atome sur le curseur
-            if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hitInfo;
+            getTarget = ReturnClickedObject(out hitInfo);
+            if ((getTarget != null) && (getTarget.tag == "Atomium"))
             {
-                lockAtome = true;
-            }
-            else
-            {
-                lockAtome = false;
+                isMouseDragging = true;
+
+                positionOfScreen = Camera.main.WorldToScreenPoint(getTarget.transform.position);
+                offsetValue = getTarget.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, positionOfScreen.z));
             }
         }
 
-        if(lockAtome == true)
+        if (Input.GetMouseButtonUp(0))
         {
-            AtomeMove();
+            isMouseDragging = false;
+            GameManager.Singleton.GetDraggedTransform(null);
+        }
+
+        if (isMouseDragging)
+        {
+            Vector3 currentScreenSpace = new Vector3(Input.mousePosition.x, Input.mousePosition.y, positionOfScreen.z);
+
+            Vector3 currentPosition = Camera.main.ScreenToWorldPoint(currentScreenSpace) + offsetValue;
+
+            getTarget.transform.position = currentPosition;
+            GameManager.Singleton.GetDraggedTransform(transform);
         }
     }
-
-    void AtomeMove()
+    GameObject ReturnClickedObject(out RaycastHit hit)
     {
-        var v3 = Input.mousePosition;
-        v3.z = 0f;
-        v3 = Camera.main.ScreenToWorldPoint(v3);
-        transform.position = v3;
+        GameObject target = null;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray.origin, ray.direction * 10, out hit))
+        {
+            target = hit.collider.gameObject;
+        }
+        return target;
+    }
+
+    public void AddInList()
+    {
+        GameManager.Singleton.AddAtome(transform);
     }
 }
