@@ -4,28 +4,67 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Définition des variables
-    public static GameManager s_Singleton;
+
+    public List<Transform> atomeList;
+    private Transform currentDraggedTransform = null;
+    private float shorterDistance = 0f;
+    private GameObject closerGameObject;
+
+    public static GameManager Singleton;
 
     private void Awake()
     {
-        if (s_Singleton != null)
+        if (Singleton != null)
         {
             Destroy(gameObject);
         }
         else
         {
-            s_Singleton = this;
+            Singleton = this;
         }
     }
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	    
-	}
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (currentDraggedTransform != null)
+        {
+            GetCloserObject();
+            Debug.Log(closerGameObject.name + " : " + shorterDistance);
+        }
+    }
+
+    public void AddAtome(Transform newAtome)
+    {
+        if (!atomeList.Contains(newAtome))
+        {
+            atomeList.Add(newAtome);
+            Debug.Log(newAtome);
+        }
+    }
+
+    public void GetDraggedTransform(Transform draggedTrs)
+    {
+        currentDraggedTransform = draggedTrs;
+    }
+
+    private void GetCloserObject()
+    {
+        shorterDistance = Vector3.Distance(atomeList[0].position, currentDraggedTransform.position);
+        closerGameObject = atomeList[0].gameObject;
+        for (int i = 0; i < atomeList.Count; i++)
+        {
+            if (Vector3.Distance(atomeList[i].position, currentDraggedTransform.position) < shorterDistance)
+            {
+                shorterDistance = Vector3.Distance(atomeList[i].position, currentDraggedTransform.position);
+                closerGameObject = atomeList[i].gameObject;
+            }
+        }
+    }
 }
