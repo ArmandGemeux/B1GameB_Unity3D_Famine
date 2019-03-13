@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private Transform currentDraggedTransform = null;
     private float shorterDistance = 0f;
     private GameObject closerGameObject;
+    private Transform benoitDuTrou;
 
     public static GameManager Singleton;
 
@@ -60,7 +61,15 @@ public class GameManager : MonoBehaviour
         closerGameObject = atomeList[0].gameObject;
         for (int i = 0; i < atomeList.Count; i++)
         {
-            if (Vector3.Distance(atomeList[i].position, currentDraggedTransform.position) < shorterDistance)
+            var a = 0;
+
+            benoitDuTrou = atomeList[i];
+            if(benoitDuTrou == currentDraggedTransform)
+            {
+                a = 1;
+            }
+
+            if ((Vector3.Distance(atomeList[i].position, currentDraggedTransform.position) < shorterDistance) && a == 0)
             {
                 shorterDistance = Vector3.Distance(atomeList[i].position, currentDraggedTransform.position);
                 closerGameObject = atomeList[i].gameObject;
