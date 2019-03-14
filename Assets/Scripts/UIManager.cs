@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
 
     public static UIManager Singleton;
 
-    /*private void Awake()
+    private void Awake()
     {
         if (Singleton != null)
         {
@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
             Singleton = this;
         }
     }
-    */
+    
     // Use this for initialization
     void Start()
     {
