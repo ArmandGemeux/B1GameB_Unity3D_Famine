@@ -17,13 +17,13 @@ public class MouvementController : MonoBehaviour
     }
     void Update()
     {
-<<<<<<< .merge_file_a21356
+<<<<<<< HEAD
         
         if (UIManager_MenuPause.isPaused == false)
 =======
 
         if (!UIManager_MenuPause.isPaused)
->>>>>>> .merge_file_a21548
+>>>>>>> ca9af90d6e942416519f79b504fa8a9e91cd2a70
 
         {
 
@@ -62,11 +62,11 @@ public class MouvementController : MonoBehaviour
             }
         }
     }
-<<<<<<< .merge_file_a21356
+<<<<<<< HEAD
 }
 
 =======
->>>>>>> .merge_file_a21548
+>>>>>>> ca9af90d6e942416519f79b504fa8a9e91cd2a70
 
     GameObject ReturnClickedObject(out RaycastHit hit)
     {
