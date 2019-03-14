@@ -1145,7 +1145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e3a669f34ff3a419a105dffe780cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forbidenDistance: 0
+  forbidenDistance: 3
 --- !u!135 &1310662596
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1366,7 +1366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e3a669f34ff3a419a105dffe780cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forbidenDistance: 0
+  forbidenDistance: 3
 --- !u!135 &1364882630
 SphereCollider:
   m_ObjectHideFlags: 0
