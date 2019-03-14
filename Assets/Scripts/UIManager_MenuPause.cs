@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class UIManager_MenuPause : MonoBehaviour {
     
     public GameObject menuPause;
+    public static bool isPaused = false;
 
     // Use this for initialization
     void Start () {
@@ -26,10 +27,12 @@ public class UIManager_MenuPause : MonoBehaviour {
         menuPause.SetActive(!menuPause.activeSelf);
         if (menuPause.activeSelf)
         {
+            isPaused = true;
             Time.timeScale = 0;
         }
         else if (!menuPause.activeSelf)
         {
+            isPaused = !isPaused;
             Time.timeScale = 1;
         }
     }
