@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Singleton;
 
+    public int myScore = 0;
+
+
     private void Awake()
     {
         if (Singleton != null)

@@ -36,6 +36,10 @@ public class UIManager : MonoBehaviour
     {
         currentTimerValue -= Time.deltaTime; // réduit la valeur du timer en fonction du temps
         timerText.text = currentTimerValue.ToString("0.0"); // Affiche la valeur du timer
+        if(currentTimerValue <= 0f)
+        {
+            SceneManager.LoadScene(2);
+        }
         
     }
 

@@ -25,4 +25,9 @@ public class UIManager_Main_Menu : MonoBehaviour {
         Debug.Log("Vous quittez le jeu");
         Application.Quit();
     }
+
+    public void OnClickReplay()
+    {
+        SceneManager.LoadScene(1);
+    }
 }
