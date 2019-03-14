@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class UIManager : MonoBehaviour
 
     public static UIManager Singleton;
 
-    private void Awake()
+    /*private void Awake()
     {
         if (Singleton != null)
         {
@@ -23,7 +24,7 @@ public class UIManager : MonoBehaviour
             Singleton = this;
         }
     }
-
+    */
     // Use this for initialization
     void Start()
     {
@@ -33,9 +34,9 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         currentTimerValue -= Time.deltaTime; // réduit la valeur du timer en fonction du temps
         timerText.text = currentTimerValue.ToString("0.0"); // Affiche la valeur du timer
+        
     }
 
     public void AddTenSeconds()
