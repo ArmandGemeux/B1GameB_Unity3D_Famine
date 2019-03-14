@@ -35,7 +35,7 @@ public class MouvementController : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && (GameManager.Singleton.shorterDistance >= forbidenDistance))
         {
             isMouseDragging = false;
             GameManager.Singleton.GetDraggedTransform(null);
@@ -51,6 +51,7 @@ public class MouvementController : MonoBehaviour
             GameManager.Singleton.GetDraggedTransform(transform);
         }
     }
+
     GameObject ReturnClickedObject(out RaycastHit hit)
     {
         GameObject target = null;

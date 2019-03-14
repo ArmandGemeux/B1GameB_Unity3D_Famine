@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 
     public List<Transform> atomeList;
     private Transform currentDraggedTransform = null;
-    private float shorterDistance = 0f;
+    public float shorterDistance = 0f;
     private GameObject closerGameObject;
     private Transform benoitDuTrou;
 

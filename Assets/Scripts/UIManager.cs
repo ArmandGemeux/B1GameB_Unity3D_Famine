@@ -11,17 +11,17 @@ public class UIManager : MonoBehaviour
     private float currentTimerValue = 0f; // valeur actuelle du timer
     public Text timerText;
 
-    public static UIManager Singleton;
+    public static UIManager UI_Singleton;
 
     private void Awake()
     {
-        if (Singleton != null)
+        if (UI_Singleton != null)
         {
             Destroy(gameObject);
         }
         else
         {
-            Singleton = this;
+            UI_Singleton = this;
         }
     }
     
