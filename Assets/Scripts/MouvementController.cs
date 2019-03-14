@@ -18,7 +18,7 @@ public class MouvementController : MonoBehaviour
     void Update()
     {
         
-        if (!UIManager_MenuPause.isPaused)
+        if (UIManager_MenuPause.isPaused == false)
 
         {
 
@@ -56,10 +56,8 @@ public class MouvementController : MonoBehaviour
             GameManager.Singleton.GetDraggedTransform(transform);
         }
     }
-<<<<<<< HEAD
-=======
 }
->>>>>>> d572fb43a795b674b2c33db15b1c422000337bec
+
 
     GameObject ReturnClickedObject(out RaycastHit hit)
     {

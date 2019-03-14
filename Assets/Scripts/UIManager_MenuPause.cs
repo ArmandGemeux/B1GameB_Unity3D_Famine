@@ -32,7 +32,7 @@ public class UIManager_MenuPause : MonoBehaviour {
         }
         else if (!menuPause.activeSelf)
         {
-            isPaused = !isPaused;
+            isPaused = false;
             Time.timeScale = 1;
         }
     }
