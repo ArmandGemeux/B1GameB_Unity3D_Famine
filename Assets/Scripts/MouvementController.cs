@@ -13,9 +13,14 @@ public class MouvementController : MonoBehaviour
     void Start()
     {
 
+
     }
     void Update()
     {
+        
+        if (!UIManager_MenuPause.isPaused)
+
+        {
 
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -51,6 +56,8 @@ public class MouvementController : MonoBehaviour
             GameManager.Singleton.GetDraggedTransform(transform);
         }
     }
+}
+
     GameObject ReturnClickedObject(out RaycastHit hit)
     {
         GameObject target = null;
