@@ -5,10 +5,18 @@ using UnityEngine;
 public class MouvementController : MonoBehaviour
 {
     GameObject getTarget;
+
     bool isMouseDragging;
+
     Vector3 offsetValue;
     Vector3 positionOfScreen;
-    public int forbidenDistance;
+<<<<<<< .merge_file_a00880
+
+=======
+  
+>>>>>>> .merge_file_a12692
+    public int forbidenShortDistance;
+    public int forbidenLongDistance;
 
     void Start()
     {
@@ -41,10 +49,19 @@ public class MouvementController : MonoBehaviour
                 }
             }
 
-            if (Input.GetMouseButtonUp(0) && (GameManager.Singleton.shorterDistance >= forbidenDistance))
+            if (Input.GetMouseButtonUp(0) && (GameManager.s_Singleton.shorterDistance >= forbidenShortDistance) && (GameManager.s_Singleton.shorterDistance <= forbidenLongDistance))
             {
                 isMouseDragging = false;
-                GameManager.Singleton.GetDraggedTransform(null);
+                GameManager.s_Singleton.GetDraggedTransform(null);
+
+                Debug.Log("Gné je ne suis pas un demeuré!");
+            }
+            else if(Input.GetMouseButtonUp(0))
+            {
+                isMouseDragging = false;
+                GameManager.s_Singleton.GetDraggedTransform(null);
+
+                Debug.Log("J'aimerai mourir!");
             }
 
             if (isMouseDragging)
@@ -54,13 +71,10 @@ public class MouvementController : MonoBehaviour
                 Vector3 currentPosition = Camera.main.ScreenToWorldPoint(currentScreenSpace) + offsetValue;
 
                 getTarget.transform.position = currentPosition;
-                GameManager.Singleton.GetDraggedTransform(transform);
+                GameManager.s_Singleton.GetDraggedTransform(transform);
             }
         }
     }
-
-
-
 
     GameObject ReturnClickedObject(out RaycastHit hit)
     {
@@ -75,6 +89,6 @@ public class MouvementController : MonoBehaviour
 
     public void AddInList()
     {
-        GameManager.Singleton.AddAtome(transform);
+        GameManager.s_Singleton.AddAtome(transform);
     }
 }
