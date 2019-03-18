@@ -11,9 +11,12 @@ public class MouvementController : MonoBehaviour
     Vector3 offsetValue;
     Vector3 positionOfScreen;
 
+<<<<<<< HEAD
 
     public int forbidenDistance;
 
+=======
+>>>>>>> 2cbbe7c344a69f863891a4da8ff27d8168a8395e
     public int forbidenShortDistance;
     public int forbidenLongDistance;
 
@@ -48,17 +51,17 @@ public class MouvementController : MonoBehaviour
                 }
             }
 
-            if (Input.GetMouseButtonUp(0) && (GameManager.Singleton.shorterDistance >= forbidenShortDistance) && (GameManager.Singleton.shorterDistance <= forbidenLongDistance))
+            if (Input.GetMouseButtonUp(0) && (GameManager.s_Singleton.shorterDistance >= forbidenShortDistance) && (GameManager.s_Singleton.shorterDistance <= forbidenLongDistance))
             {
                 isMouseDragging = false;
-                GameManager.Singleton.GetDraggedTransform(null);
+                GameManager.s_Singleton.GetDraggedTransform(null);
 
                 Debug.Log("Gné je ne suis pas un demeuré!");
             }
             else if(Input.GetMouseButtonUp(0))
             {
                 isMouseDragging = false;
-                GameManager.Singleton.GetDraggedTransform(null);
+                GameManager.s_Singleton.GetDraggedTransform(null);
 
                 Debug.Log("J'aimerai mourir!");
             }
@@ -70,7 +73,7 @@ public class MouvementController : MonoBehaviour
                 Vector3 currentPosition = Camera.main.ScreenToWorldPoint(currentScreenSpace) + offsetValue;
 
                 getTarget.transform.position = currentPosition;
-                GameManager.Singleton.GetDraggedTransform(transform);
+                GameManager.s_Singleton.GetDraggedTransform(transform);
             }
         }
     }
@@ -88,6 +91,6 @@ public class MouvementController : MonoBehaviour
 
     public void AddInList()
     {
-        GameManager.Singleton.AddAtome(transform);
+        GameManager.s_Singleton.AddAtome(transform);
     }
 }
