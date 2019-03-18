@@ -13,8 +13,7 @@ public class UIManager : MonoBehaviour
     public Text timerText;
 
     public static UIManager UI_Singleton;
-
-    //Countdown
+    
     public float startTimer;
     public Text startText;
     public GameObject Countdown;
