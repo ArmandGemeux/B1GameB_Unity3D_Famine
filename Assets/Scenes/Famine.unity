@@ -1146,6 +1146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e3a669f34ff3a419a105dffe780cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forbidenDistance: 3
   forbidenShortDistance: 3
   forbidenLongDistance: 5
 --- !u!135 &1310662596
@@ -1754,6 +1755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e3a669f34ff3a419a105dffe780cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forbidenDistance: 3
   forbidenShortDistance: 3
   forbidenLongDistance: 5
 --- !u!135 &1793932596
