@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
     private Transform benoitDuTrou;
     public int myScore = 0;
 
+    public GameObject fullItem;
+    private GameObject currentCard;
+    private GameObject currentFullItem;
+
 
     public static GameManager s_Singleton;
 
@@ -80,5 +84,23 @@ public class GameManager : MonoBehaviour
                 closerGameObject = atomeList[i].gameObject;
             }
         }
+    }
+
+    public void DisplayItem()
+    {
+        currentFullItem = Instantiate(fullItem);
+        currentCard.SetActive(false);
+    }
+
+    public void HideItem()
+    {
+        Destroy(currentFullItem);
+        currentCard.SetActive(true);
+
+    }
+
+    public void FillInCurrentCard(GameObject cCard)
+    {
+        currentCard = cCard;
     }
 }
