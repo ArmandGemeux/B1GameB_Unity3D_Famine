@@ -5,9 +5,12 @@ using UnityEngine;
 public class MouvementController : MonoBehaviour
 {
     GameObject getTarget;
+
     bool isMouseDragging;
+
     Vector3 offsetValue;
     Vector3 positionOfScreen;
+
     public int forbidenDistance;
 
     void Start()
