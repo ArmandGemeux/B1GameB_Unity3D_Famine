@@ -12,7 +12,7 @@ public class MouvementController : MonoBehaviour
     Vector3 positionOfScreen;
 
 
-    public int forbidenDistance;
+    
     public int forbidenShortDistance;
     public int forbidenLongDistance;
 
