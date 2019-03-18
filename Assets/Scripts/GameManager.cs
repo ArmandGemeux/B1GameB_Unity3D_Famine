@@ -10,21 +10,20 @@ public class GameManager : MonoBehaviour
     public float shorterDistance = 0f;
     private GameObject closerGameObject;
     private Transform benoitDuTrou;
-
-    public static GameManager Singleton;
-
     public int myScore = 0;
 
 
+    public static GameManager s_Singleton;
+
     private void Awake()
     {
-        if (Singleton != null)
+        if (s_Singleton != null)
         {
             Destroy(gameObject);
         }
         else
         {
-            Singleton = this;
+            s_Singleton = this;
         }
     }
 
