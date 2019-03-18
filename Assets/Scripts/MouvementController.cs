@@ -11,12 +11,11 @@ public class MouvementController : MonoBehaviour
     Vector3 offsetValue;
     Vector3 positionOfScreen;
 
-<<<<<<< HEAD
+
     public int forbidenDistance;
-=======
     public int forbidenShortDistance;
     public int forbidenLongDistance;
->>>>>>> 128efb6a116a86165c7af37a849f2321411f5964
+
 
     void Start()
     {
