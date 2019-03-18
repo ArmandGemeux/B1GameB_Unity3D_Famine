@@ -18,10 +18,9 @@ public class PlayZone : MonoBehaviour {
     {
         GameManager.s_Singleton.DisplayItem();
     }
-    /*
+
     private void OnMouseExit()
     {
         GameManager.s_Singleton.HideItem();
     }
-    */
 }
