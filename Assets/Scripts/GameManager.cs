@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
 
     public List<Transform> atomeList;
     private Transform currentDraggedTransform = null;
+
     public float shorterDistance = 0f;
+
     private GameObject closerGameObject;
     private Transform benoitDuTrou;
     public int myScore = 0;
