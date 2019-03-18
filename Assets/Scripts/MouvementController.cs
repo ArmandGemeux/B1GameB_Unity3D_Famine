@@ -11,7 +11,12 @@ public class MouvementController : MonoBehaviour
     Vector3 offsetValue;
     Vector3 positionOfScreen;
 
+<<<<<<< HEAD
     public int forbidenDistance;
+=======
+    public int forbidenShortDistance;
+    public int forbidenLongDistance;
+>>>>>>> 128efb6a116a86165c7af37a849f2321411f5964
 
     void Start()
     {
@@ -44,10 +49,19 @@ public class MouvementController : MonoBehaviour
                 }
             }
 
-            if (Input.GetMouseButtonUp(0) && (GameManager.Singleton.shorterDistance >= forbidenDistance))
+            if (Input.GetMouseButtonUp(0) && (GameManager.Singleton.shorterDistance >= forbidenShortDistance) && (GameManager.Singleton.shorterDistance <= forbidenLongDistance))
             {
                 isMouseDragging = false;
                 GameManager.Singleton.GetDraggedTransform(null);
+
+                Debug.Log("Gné je ne suis pas un demeuré!");
+            }
+            else if(Input.GetMouseButtonUp(0))
+            {
+                isMouseDragging = false;
+                GameManager.Singleton.GetDraggedTransform(null);
+
+                Debug.Log("J'aimerai mourir!");
             }
 
             if (isMouseDragging)
@@ -61,9 +75,6 @@ public class MouvementController : MonoBehaviour
             }
         }
     }
-
-
-
 
     GameObject ReturnClickedObject(out RaycastHit hit)
     {

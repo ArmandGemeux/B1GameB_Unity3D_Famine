@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32b0af3dca200246a0bfc07cb09884a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerValue: 5
+  timerValue: 60
   timerText: {fileID: 324922271}
 --- !u!114 &560206095
 MonoBehaviour:
@@ -1146,7 +1146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e3a669f34ff3a419a105dffe780cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forbidenDistance: 3
+  forbidenShortDistance: 3
+  forbidenLongDistance: 5
 --- !u!135 &1310662596
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1753,7 +1754,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e3a669f34ff3a419a105dffe780cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forbidenDistance: 3
+  forbidenShortDistance: 3
+  forbidenLongDistance: 5
 --- !u!135 &1793932596
 SphereCollider:
   m_ObjectHideFlags: 0
