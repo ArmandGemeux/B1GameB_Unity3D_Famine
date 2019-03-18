@@ -10,7 +10,11 @@ public class MouvementController : MonoBehaviour
 
     Vector3 offsetValue;
     Vector3 positionOfScreen;
+<<<<<<< .merge_file_a00880
 
+=======
+  
+>>>>>>> .merge_file_a12692
     public int forbidenShortDistance;
     public int forbidenLongDistance;
 
