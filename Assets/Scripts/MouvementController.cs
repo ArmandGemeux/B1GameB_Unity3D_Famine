@@ -10,18 +10,13 @@ public class MouvementController : MonoBehaviour
 
     Vector3 offsetValue;
     Vector3 positionOfScreen;
-<<<<<<< .merge_file_a00880
 
-=======
-  
->>>>>>> .merge_file_a12692
     public int forbidenShortDistance;
     public int forbidenLongDistance;
 
     void Start()
     {
-
-
+        AddInList();
     }
 
     void Update()
@@ -30,12 +25,6 @@ public class MouvementController : MonoBehaviour
         
         if (UIManager_MenuPause.isPaused == false)
         {
-
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                AddInList();
-            }
-
             if (Input.GetMouseButtonDown(0))
             {
                 RaycastHit hitInfo;
