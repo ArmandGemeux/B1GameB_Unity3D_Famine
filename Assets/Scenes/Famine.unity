@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 322633118}
   m_Layer: 0
   m_Name: Object_Materials_Test
-  m_TagString: Untagged
+  m_TagString: Atomium
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -315,12 +315,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Oxygene:
   - {fileID: 2100000, guid: eea070850fd9dc44ab13a3b72d25be3c, type: 2}
-  - {fileID: 2100000, guid: b9aae3d9457d950458faec5460020f59, type: 2}
   - {fileID: 2100000, guid: deea52ffd275d89439d006578f4730d1, type: 2}
+  - {fileID: 2100000, guid: b9aae3d9457d950458faec5460020f59, type: 2}
   Carbon:
   - {fileID: 2100000, guid: ece9e28012d4a3149b52ac84acbcbfa0, type: 2}
   - {fileID: 2100000, guid: 3d78e6fa97e1182449f671895f133c99, type: 2}
   - {fileID: 2100000, guid: a388f9a1376618e43b17bafa5d66c87f, type: 2}
+  - {fileID: 2100000, guid: 1a8b188d4043bb240aad6eff876bedf9, type: 2}
+  - {fileID: 2100000, guid: e1dc8ab2bce99424fb2579390815299d, type: 2}
   Azote:
   - {fileID: 2100000, guid: eaaf3db2e435c6e4b8a7aaf3b95c730d, type: 2}
   - {fileID: 2100000, guid: 1fe9dd7f339541241b0fe0822d091792, type: 2}
@@ -355,7 +357,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 92fb9a27d7da191489a23fb47413e0cd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1822,7 +1824,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 987752b8cf549ec46ae94e1398548f87, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
