@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 821870c04f0627c4589f5f54f4aaeeb4
+guid: effd8dd8e94e89c4796944e07b3ff925
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Nau Sea
+  fontName: Nuevo Passion
   fontNames:
-  - Nau Sea
+  - Nuevo Passion
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

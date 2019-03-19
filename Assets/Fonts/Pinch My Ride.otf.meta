@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 491fe0460d2259e45964a92cda6dbefb
+guid: 6aefa0e0baca8cf489f6bffa1372e5ec
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: 'Pixelation '
+  fontName: Pinch My Ride
   fontNames:
-  - 'Pixelation '
+  - Pinch My Ride
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

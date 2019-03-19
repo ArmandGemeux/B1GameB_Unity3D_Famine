@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6b42a77011b4d2e4a8ece7c1681c09e2
+guid: f07caa9926e85104dbaeb0d163574174
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Visitor TT2 BRK
+  fontName: Freak Normal
   fontNames:
-  - Visitor TT2 BRK
+  - Freak Normal
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

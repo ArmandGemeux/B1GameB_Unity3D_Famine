@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d4ec652f4ff23a9498db4b822d92a3a3
+guid: a32c58bb5ae1bf94fb624d5c1dbed8af
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: JAGUAR
+  fontName: Roundy Rainbows
   fontNames:
-  - JAGUAR
+  - Roundy Rainbows
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

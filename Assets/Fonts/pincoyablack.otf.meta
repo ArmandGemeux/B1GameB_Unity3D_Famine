@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ed0c0d8ec79b7624182cc13db43acbd7
+guid: 713195c81f8d8cd439e727bc323565e2
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Modern LCD-7
+  fontName: Pincoyablack
   fontNames:
-  - Modern LCD-7
+  - Pincoyablack
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
