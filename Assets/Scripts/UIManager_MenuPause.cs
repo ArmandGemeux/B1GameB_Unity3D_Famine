@@ -50,7 +50,7 @@ public class UIManager_MenuPause : MonoBehaviour {
     public void OnClickQuit()
     {
         Debug.Log("Quitte le jeu");
-        //Application.Quit();
+        Application.Quit();
         SceneManager.LoadScene(2);
     }
 }

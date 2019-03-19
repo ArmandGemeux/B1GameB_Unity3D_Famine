@@ -10,6 +10,10 @@ public class UIManager : MonoBehaviour
     public float timerValue = 90f; // valeur de départ du timer
     private float currentTimerValue = 0f; // valeur actuelle du timer
     public Text timerText;
+    public float startTimer;
+    public Text startText;
+    public GameObject CountDown;
+    bool activeOnce = false;
 
     public static UIManager UI_Singleton;
 
@@ -34,8 +38,27 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentTimerValue -= Time.deltaTime; // réduit la valeur du timer en fonction du temps
-        timerText.text = currentTimerValue.ToString("0.0"); // Affiche la valeur du timer
+
+
+        startTimer -= Time.deltaTime;
+        startText.text = (startTimer).ToString("0");
+
+        if (activeOnce == false)
+        {
+            if (startTimer <= 0)
+            {
+                CountDown.SetActive(!CountDown.activeSelf);
+                activeOnce = true;
+            }
+        }
+
+        if (activeOnce == true)
+        {
+            currentTimerValue -= Time.deltaTime; // réduit la valeur du timer en fonction du temps
+            timerText.text = currentTimerValue.ToString("0.0"); // Affiche la valeur du timer
+        }
+
+
         if(currentTimerValue <= 0f)
         {
             SceneManager.LoadScene(2);
