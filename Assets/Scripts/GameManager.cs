@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     public float shorterDistance = 0f;
 
-    private GameObject closerGameObject;
+    public GameObject closerGameObject;
 
     public GameObject fullItem;
     private GameObject currentCard;
