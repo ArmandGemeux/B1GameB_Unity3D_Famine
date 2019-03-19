@@ -438,6 +438,7 @@ GameObject:
   - component: {fileID: 322633121}
   - component: {fileID: 322633120}
   - component: {fileID: 322633119}
+  - component: {fileID: 322633123}
   - component: {fileID: 322633118}
   m_Layer: 0
   m_Name: Object_Materials_Test
@@ -541,6 +542,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &322633123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 322633117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e3a669f34ff3a419a105dffe780cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forbidenShortDistance: 0
+  forbidenLongDistance: 0
+  direction: {x: 0, y: 0}
+  moveSpeed: 0
 --- !u!1 &324922270
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,6 +1006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atomeList: []
   shorterDistance: 0
+  closerGameObject: {fileID: 0}
   fullItem: {fileID: 0}
 --- !u!4 &588958558
 Transform:
@@ -1681,7 +1698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1879,6 +1896,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forbidenShortDistance: 3
   forbidenLongDistance: 5
+  direction: {x: 0, y: 0}
+  moveSpeed: 0
 --- !u!135 &1310662596
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2680,7 +2699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: f702f4dc9bfb1394cb1ca503548a5fae, type: 2}
-  m_Color: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2734,6 +2753,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forbidenShortDistance: 3
   forbidenLongDistance: 5
+  direction: {x: 0, y: 0}
+  moveSpeed: 0
 --- !u!135 &1793932596
 SphereCollider:
   m_ObjectHideFlags: 0
