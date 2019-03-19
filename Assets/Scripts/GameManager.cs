@@ -11,8 +11,6 @@ public class GameManager : MonoBehaviour
     public float shorterDistance = 0f;
 
     private GameObject closerGameObject;
-    private Transform benoitDuTrou;
-    public int myScore = 0;
 
     public GameObject fullItem;
     private GameObject currentCard;
@@ -46,7 +44,7 @@ public class GameManager : MonoBehaviour
     {
         if (currentDraggedTransform != null)
         {
-            GetCloserObject();
+            GetClosestAtomFromDraggedAtom();
             Debug.Log(closerGameObject.name + " : " + shorterDistance);
         }
     }
@@ -65,28 +63,28 @@ public class GameManager : MonoBehaviour
         currentDraggedTransform = draggedTrs;
     }
 
-    private void GetCloserObject()
+    public void NullifyDraggedTransform()
     {
-        shorterDistance = Vector3.Distance(atomeList[0].position, currentDraggedTransform.position);
-        closerGameObject = atomeList[0].gameObject;
+        currentDraggedTransform = null;
+    }
+
+    public void GetClosestAtomFromDraggedAtom ()
+    {
+        shorterDistance = 999999f;
         for (int i = 0; i < atomeList.Count; i++)
         {
-            var a = 0;
-
-            benoitDuTrou = atomeList[i];
-            if(benoitDuTrou == currentDraggedTransform)
+            if (atomeList[i] != currentDraggedTransform)
             {
-                a = 1;
-            }
-
-            if ((Vector3.Distance(atomeList[i].position, currentDraggedTransform.position) < shorterDistance) && a == 0)
-            {
-                shorterDistance = Vector3.Distance(atomeList[i].position, currentDraggedTransform.position);
-                closerGameObject = atomeList[i].gameObject;
+                float tmpSd = Vector3.Distance(atomeList[i].position, currentDraggedTransform.position);
+                if (tmpSd < shorterDistance)
+                {
+                    shorterDistance = tmpSd;
+                    closerGameObject = atomeList[i].gameObject;
+                }
             }
         }
     }
-
+    
     public void DisplayItem()
     {
         currentFullItem = Instantiate(fullItem);
@@ -108,15 +106,7 @@ public class GameManager : MonoBehaviour
     public void AtomNumber()
     {
         int randNumber = Random.Range(0, 4);
-        if(randNumber==4)
-        {
-            randNumber= Random.Range(0, 3);
-        }
+        
         Debug.Log(randNumber);
     }
-
-
-
-
-
 }
