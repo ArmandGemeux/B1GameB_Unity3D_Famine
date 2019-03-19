@@ -9,6 +9,7 @@ public class MouvementController : MonoBehaviour
     
     public int forbidenShortDistance;
     public int forbidenLongDistance;
+    private float saveShorterDistance;
 
     public Vector2 direction = Vector2.zero;
     public int moveSpeed = 0;
@@ -40,7 +41,7 @@ public class MouvementController : MonoBehaviour
 
     private void OnMouseDown() // Quand le bouton de la souris est enfoncé.
     {
-        if (!UIManager_MenuPause.isPaused && gameObject.tag == "Atomium")
+        if (!UIManager_MenuPause.isPaused && gameObject.tag == "Atomium" && GameManager.s_Singleton.canDragAtome == true)
         {
             isMouseDragging = true;
             GameManager.s_Singleton.GetDraggedTransform(transform);
@@ -52,12 +53,10 @@ public class MouvementController : MonoBehaviour
         if (!UIManager_MenuPause.isPaused && (GameManager.s_Singleton.shorterDistance >= forbidenShortDistance && GameManager.s_Singleton.shorterDistance <= forbidenLongDistance))
         {
             isMouseDragging = false;
-            //GameManager.s_Singleton.NullifyDraggedTransform();
         }
         else if(!UIManager_MenuPause.isPaused)
         {
             isMouseDragging = false;
-            //GameManager.s_Singleton.NullifyDraggedTransform();
             moving = true;
         }
     }
@@ -66,8 +65,12 @@ public class MouvementController : MonoBehaviour
     {
         if (moving == true && canMove == true)
         {
-            if (GameManager.s_Singleton.shorterDistance >= forbidenShortDistance)
+            GameManager.s_Singleton.canDragAtome = false;
+
+            if (GameManager.s_Singleton.shorterDistance >= forbidenLongDistance)
             {
+                saveShorterDistance = GameManager.s_Singleton.shorterDistance;
+
                 direction = GameManager.s_Singleton.closerGameObject.transform.position - transform.position;
 
                 direction.Normalize();
@@ -86,6 +89,7 @@ public class MouvementController : MonoBehaviour
                 GameManager.s_Singleton.NullifyDraggedTransform();
                 gameObject.tag = "Untagged";
                 canMove = false;
+                GameManager.s_Singleton.canDragAtome = true;
             }
         }
     }
