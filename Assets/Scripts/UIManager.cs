@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     bool activeOnce = false;
     bool activeTimerText = false;
     bool activeEndGText = false;
+    bool startTimerIsDisabled = false;
 
     public float endCDTimer;
 
@@ -43,6 +44,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         endGameText.SetActive(!endGameText.activeSelf);
+
         currentTimerValue = timerValue;
     }
 
@@ -60,6 +62,7 @@ public class UIManager : MonoBehaviour
             {
                 countDown.SetActive(!countDown.activeSelf);
                 activeOnce = true;
+                startTimerIsDisabled = true;
             }
         }
 
@@ -69,7 +72,12 @@ public class UIManager : MonoBehaviour
             timerText.text = currentTimerValue.ToString("0.0"); // Affiche la valeur du timer
         }
 
-
+        if(startTimerIsDisabled == true)
+        {
+            Timer.SetActive(!Timer.activeSelf);
+            startTimerIsDisabled = false;
+        }
+        
         if (currentTimerValue <= 0f && activeTimerText == false)
         {
             Timer.SetActive(!Timer.activeSelf);
