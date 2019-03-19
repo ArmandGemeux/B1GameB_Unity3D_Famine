@@ -10,10 +10,20 @@ public class UIManager : MonoBehaviour
     public float timerValue = 90f; // valeur de départ du timer
     private float currentTimerValue = 0f; // valeur actuelle du timer
     public Text timerText;
+    public GameObject Timer;
+
     public float startTimer;
     public Text startText;
-    public GameObject CountDown;
+    public GameObject countDown;
     bool activeOnce = false;
+    bool activeTimerText = false;
+    bool activeEndGText = false;
+
+    public float endCDTimer;
+
+    public GameObject endGameText;
+
+
 
     public static UIManager UI_Singleton;
 
@@ -32,6 +42,7 @@ public class UIManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        endGameText.SetActive(!endGameText.activeSelf);
         currentTimerValue = timerValue;
     }
 
@@ -47,7 +58,7 @@ public class UIManager : MonoBehaviour
         {
             if (startTimer <= 0)
             {
-                CountDown.SetActive(!CountDown.activeSelf);
+                countDown.SetActive(!countDown.activeSelf);
                 activeOnce = true;
             }
         }
@@ -59,10 +70,30 @@ public class UIManager : MonoBehaviour
         }
 
 
-        if(currentTimerValue <= 0f)
+        if (currentTimerValue <= 0f && activeTimerText == false)
         {
-            SceneManager.LoadScene(2);
+            Timer.SetActive(!Timer.activeSelf);
+            activeTimerText = true;
         }
+
+        if (activeEndGText == false && activeTimerText == true)
+        {
+            endGameText.SetActive(!endGameText.activeSelf);
+            activeEndGText = true;
+        }
+
+        if (activeEndGText == true)
+        {
+            endCDTimer -= Time.deltaTime;
+        }
+
+            if (endCDTimer <= 0)
+            {
+                SceneManager.LoadScene(2);
+            }
+                
+            
+            
         
     }
 
