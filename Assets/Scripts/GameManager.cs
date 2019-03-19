@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         UIManager_MenuPause.isPaused = false;
+        AtomNumber();
 
     }
 
@@ -103,4 +104,19 @@ public class GameManager : MonoBehaviour
     {
         currentCard = cCard;
     }
+
+    public void AtomNumber()
+    {
+        int randNumber = Random.Range(0, 4);
+        if(randNumber==4)
+        {
+            randNumber= Random.Range(0, 3);
+        }
+        Debug.Log(randNumber);
+    }
+
+
+
+
+
 }

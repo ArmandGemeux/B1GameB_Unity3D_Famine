@@ -21,7 +21,7 @@ public class Materials_Change : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.G))
         {
            gameObject.GetComponent<Renderer>().material = Oxygene[1];
-            Debug.Log("mon ami");
+           
         }
 	}
 }
