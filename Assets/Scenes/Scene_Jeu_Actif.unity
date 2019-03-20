@@ -1113,7 +1113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1121,9 +1121,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1f16052dfd5f6f54e94e97ecedd4c86b, type: 3}
+    m_Font: {fileID: 12800000, guid: a32c58bb5ae1bf94fb624d5c1dbed8af, type: 3}
     m_FontSize: 14
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 40
@@ -1332,7 +1332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1340,9 +1340,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1f16052dfd5f6f54e94e97ecedd4c86b, type: 3}
+    m_Font: {fileID: 12800000, guid: a32c58bb5ae1bf94fb624d5c1dbed8af, type: 3}
     m_FontSize: 14
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 40
@@ -1761,8 +1761,17 @@ Transform:
   - {fileID: 630621157}
   - {fileID: 2133371539}
   - {fileID: 408251570}
+<<<<<<< HEAD
   m_Father: {fileID: 1846278561}
   m_RootOrder: 5
+=======
+  m_Father: {fileID: 0}
+<<<<<<< HEAD
+  m_RootOrder: 8
+=======
+  m_RootOrder: 7
+>>>>>>> 7b8aa6f53f254b4ec298d8b146dc3d081ddac980
+>>>>>>> d2b899a0f8543fa387a49091d1b190ad4ff75466
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &708420698
 GameObject:
@@ -2206,8 +2215,17 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1121774907}
+<<<<<<< HEAD
   m_Father: {fileID: 1846278561}
   m_RootOrder: 2
+=======
+  m_Father: {fileID: 0}
+<<<<<<< HEAD
+  m_RootOrder: 3
+=======
+  m_RootOrder: 4
+>>>>>>> 7b8aa6f53f254b4ec298d8b146dc3d081ddac980
+>>>>>>> d2b899a0f8543fa387a49091d1b190ad4ff75466
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3557,7 +3575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3565,9 +3583,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1f16052dfd5f6f54e94e97ecedd4c86b, type: 3}
+    m_Font: {fileID: 12800000, guid: a32c58bb5ae1bf94fb624d5c1dbed8af, type: 3}
     m_FontSize: 14
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 40
@@ -3864,8 +3882,17 @@ RectTransform:
   - {fileID: 1945849991}
   - {fileID: 1786894075}
   - {fileID: 2041727431}
+<<<<<<< HEAD
   m_Father: {fileID: 1846278561}
   m_RootOrder: 3
+=======
+  m_Father: {fileID: 0}
+<<<<<<< HEAD
+  m_RootOrder: 4
+=======
+  m_RootOrder: 5
+>>>>>>> 7b8aa6f53f254b4ec298d8b146dc3d081ddac980
+>>>>>>> d2b899a0f8543fa387a49091d1b190ad4ff75466
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5193,8 +5220,17 @@ Transform:
   m_LocalPosition: {x: -498.9501, y: -322.31363, z: 3.4338503}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+<<<<<<< HEAD
   m_Father: {fileID: 1846278561}
   m_RootOrder: 0
+=======
+  m_Father: {fileID: 0}
+<<<<<<< HEAD
+  m_RootOrder: 5
+=======
+  m_RootOrder: 2
+>>>>>>> 7b8aa6f53f254b4ec298d8b146dc3d081ddac980
+>>>>>>> d2b899a0f8543fa387a49091d1b190ad4ff75466
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2041727430
 GameObject:
@@ -5292,8 +5328,17 @@ Transform:
   m_Children:
   - {fileID: 736697917}
   - {fileID: 242872211}
+<<<<<<< HEAD
   m_Father: {fileID: 1846278561}
   m_RootOrder: 6
+=======
+  m_Father: {fileID: 0}
+<<<<<<< HEAD
+  m_RootOrder: 7
+=======
+  m_RootOrder: 8
+>>>>>>> 7b8aa6f53f254b4ec298d8b146dc3d081ddac980
+>>>>>>> d2b899a0f8543fa387a49091d1b190ad4ff75466
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2133371538
 GameObject:
