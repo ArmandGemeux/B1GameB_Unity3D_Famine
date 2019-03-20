@@ -990,6 +990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atomeList: []
   shorterDistance: 0
+  closerGameObject: {fileID: 0}
   fullItem: {fileID: 0}
 --- !u!4 &588958558
 Transform:
@@ -1879,6 +1880,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forbidenShortDistance: 3
   forbidenLongDistance: 5
+  direction: {x: 0, y: 0}
+  moveSpeed: 3
 --- !u!135 &1310662596
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2734,6 +2737,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forbidenShortDistance: 3
   forbidenLongDistance: 5
+  direction: {x: 0, y: 0}
+  moveSpeed: 3
 --- !u!135 &1793932596
 SphereCollider:
   m_ObjectHideFlags: 0
