@@ -15,10 +15,10 @@ public class UIManager : MonoBehaviour
     public float startTimer;
     public Text startText;
     public GameObject countDown;
-    bool activeOnce = false;
-    bool activeTimerText = false;
-    bool activeEndGText = false;
-    bool startTimerIsDisabled = false;
+    bool startTimerIsFinished = false;
+    bool chronoTimerisActive = false;
+    bool endGTimerIsActive = false;
+    bool startTimerIsActive = false;
 
     public float endCDTimer;
 
@@ -51,46 +51,44 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-        startTimer -= Time.deltaTime;
-        startText.text = (startTimer).ToString("0");
-
-        if (activeOnce == false)
+        if (startTimerIsFinished == false)
         {
+            startTimer -= Time.deltaTime;
+            startText.text = (startTimer).ToString("0");
+
             if (startTimer <= 0)
             {
                 countDown.SetActive(!countDown.activeSelf);
-                activeOnce = true;
-                startTimerIsDisabled = true;
+                startTimerIsFinished = true;
+                startTimerIsActive = true;
             }
         }
 
-        if (activeOnce == true)
+        if (startTimerIsFinished)
         {
             currentTimerValue -= Time.deltaTime; // réduit la valeur du timer en fonction du temps
             timerText.text = currentTimerValue.ToString("0.0"); // Affiche la valeur du timer
         }
 
-        if(startTimerIsDisabled == true)
+        if(startTimerIsActive)
         {
             Timer.SetActive(!Timer.activeSelf);
-            startTimerIsDisabled = false;
+            startTimerIsActive = false;
         }
         
-        if (currentTimerValue <= 0f && activeTimerText == false)
+        if (currentTimerValue <= 0f && chronoTimerisActive == false)
         {
             Timer.SetActive(!Timer.activeSelf);
-            activeTimerText = true;
+            chronoTimerisActive = true;
         }
 
-        if (activeEndGText == false && activeTimerText == true)
+        if (endGTimerIsActive == false && chronoTimerisActive)
         {
             endGameText.SetActive(!endGameText.activeSelf);
-            activeEndGText = true;
+            endGTimerIsActive = true;
         }
 
-        if (activeEndGText == true)
+        if (endGTimerIsActive)
         {
             endCDTimer -= Time.deltaTime;
         }
