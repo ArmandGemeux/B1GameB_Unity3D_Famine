@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     private GameObject currentCard;
     private GameObject currentFullItem;
 
+    public bool canDragAtome = true;
 
     public static GameManager s_Singleton;
 
