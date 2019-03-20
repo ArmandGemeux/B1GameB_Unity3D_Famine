@@ -8,23 +8,26 @@ public class UIManager : MonoBehaviour
 {
     
     public float timerValue = 90f; // valeur de départ du timer
-    private float currentTimerValue = 0f; // valeur actuelle du timer
-    public Text timerText;
-    public GameObject Timer;
+    private float currentTimerValue = 0f; // valeur actuelle du timer   
+    public float endCDTimer; //Valeur du timer caché de transition finale
+    public float startTimer; //Décompte de début de partie
 
-    public float startTimer;
     public Text startText;
-    public GameObject countDown;
-    bool startTimerIsFinished = false;
+    public Text timerText;
+
+
+    bool startTimerIsFinished = false; // Les booléans ici servent à éteindre les timers/créer les transitions.
     bool chronoTimerisActive = false;
     bool endGTimerIsActive = false;
     bool startTimerIsActive = false;
+    bool isScoreBoardActive = false;
+    bool isUIGameActive = false;
 
-    public float endCDTimer;
-
+    public GameObject Timer;
+    public GameObject countDown;
     public GameObject endGameText;
-
-
+    public GameObject ScoreBoard;
+    public GameObject UIGame;
 
     public static UIManager UI_Singleton;
 
@@ -44,6 +47,8 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         endGameText.SetActive(!endGameText.activeSelf);
+        ScoreBoard.SetActive(!ScoreBoard.activeSelf);
+
 
         currentTimerValue = timerValue;
     }
@@ -51,10 +56,10 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (startTimerIsFinished == false)
+        if (!startTimerIsFinished)
         {
-            startTimer -= Time.deltaTime;
-            startText.text = (startTimer).ToString("0");
+            startTimer -= Time.deltaTime; // réduit la valeur du timer en fonction du temps
+            startText.text = (startTimer).ToString("0"); // Affiche la valeur du timer
 
             if (startTimer <= 0)
             {
@@ -76,13 +81,13 @@ public class UIManager : MonoBehaviour
             startTimerIsActive = false;
         }
         
-        if (currentTimerValue <= 0f && chronoTimerisActive == false)
+        if (currentTimerValue <= 0f && !chronoTimerisActive)
         {
             Timer.SetActive(!Timer.activeSelf);
             chronoTimerisActive = true;
         }
 
-        if (endGTimerIsActive == false && chronoTimerisActive)
+        if (!endGTimerIsActive && chronoTimerisActive)
         {
             endGameText.SetActive(!endGameText.activeSelf);
             endGTimerIsActive = true;
@@ -93,18 +98,22 @@ public class UIManager : MonoBehaviour
             endCDTimer -= Time.deltaTime;
         }
 
-            if (endCDTimer <= 0)
-            {
-                SceneManager.LoadScene(2);
-            }
-                
-            
-            
-        
+        if (endCDTimer <= 0 && !isScoreBoardActive)
+        {
+                isScoreBoardActive = true;
+                ScoreBoard.SetActive(!ScoreBoard.activeSelf);
+        }
+
+        if (isScoreBoardActive && !isUIGameActive)
+        {
+            UIGame.SetActive(!UIGame.activeSelf);
+            isUIGameActive = true;
+        }
     }
 
-    public void AddTenSeconds()
-    {
+    /*  public void AddTenSeconds()
+        {
         currentTimerValue += 10f;
-    }
+        }
+    */
 }
