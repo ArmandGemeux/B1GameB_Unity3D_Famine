@@ -110,10 +110,4 @@ public class UIManager : MonoBehaviour
             isUIGameActive = true;
         }
     }
-
-    /*  public void AddTenSeconds()
-        {
-        currentTimerValue += 10f;
-        }
-    */
 }
