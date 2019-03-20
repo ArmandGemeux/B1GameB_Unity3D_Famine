@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private Transform currentDraggedTransform = null;
 
     public float shorterDistance = 0f;
+    public float shorterNextDistance = 0f;
 
     public GameObject closerGameObject;
 
@@ -81,6 +82,22 @@ public class GameManager : MonoBehaviour
                 {
                     shorterDistance = tmpSd;
                     closerGameObject = atomeList[i].gameObject;
+                }
+            }
+        }
+    }
+
+    public void VerifyDistance(Vector2 nextDistance, Transform atomeToCheck)
+    {
+        shorterNextDistance = 999999f;
+        for (int i = 0; i < atomeList.Count; i++)
+        {
+            if (atomeList[i] != atomeToCheck)
+            {
+                float tmpSnd = Vector3.Distance(atomeList[i].position, nextDistance);
+                if (tmpSnd < shorterNextDistance)
+                {
+                    shorterNextDistance = tmpSnd;
                 }
             }
         }

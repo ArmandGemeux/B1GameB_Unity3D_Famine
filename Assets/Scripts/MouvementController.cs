@@ -7,18 +7,23 @@ public class MouvementController : MonoBehaviour
     // On déclare toutes les variables!
     bool isMouseDragging;
     
-    public int forbidenShortDistance;
-    public int forbidenLongDistance;
-    private float saveShorterDistance;
+    public float forbidenShortDistance;
+    public float forbidenLongDistance;
+    public float perfectDistance;
 
     public Vector2 direction = Vector2.zero;
-    public int moveSpeed = 0;
+    public float moveSpeed = 0f;
     private bool canMove = true;
     private bool moving = false;
+
+    public float verfiedDistance;
+
+    private Vector2 nextPosition;
 
     void Start()
     {
         AddInList(); // Ajoute l'atome possédant le script à une liste dans le GameManager.
+        perfectDistance = forbidenShortDistance + (forbidenLongDistance - forbidenShortDistance) / 2;
     }
 
     void Update()
@@ -60,29 +65,44 @@ public class MouvementController : MonoBehaviour
             moving = true;
         }
     }
-
+    
     private void MoveToGoodPos()
     {
         if (moving == true && canMove == true)
         {
             GameManager.s_Singleton.canDragAtome = false;
+            
+            direction = GameManager.s_Singleton.closerGameObject.transform.position - transform.position;
 
-            if (GameManager.s_Singleton.shorterDistance >= forbidenLongDistance)
+            direction.Normalize();
+
+            nextPosition = transform.position;
+            nextPosition.x += direction.x * moveSpeed * Time.deltaTime;
+            nextPosition.y += direction.y * moveSpeed * Time.deltaTime;
+
+            GameManager.s_Singleton.VerifyDistance(nextPosition, transform);
+            Debug.Log("la distance la plus courte actuelle!" + GameManager.s_Singleton.shorterDistance);
+            Debug.Log("la distance la plus courte à la prochaine frame!" + GameManager.s_Singleton.shorterNextDistance);
+
+            if (GameManager.s_Singleton.shorterNextDistance > perfectDistance)
             {
-                saveShorterDistance = GameManager.s_Singleton.shorterDistance;
+                Debug.Log("Move Fast");
 
-                direction = GameManager.s_Singleton.closerGameObject.transform.position - transform.position;
+                transform.position = nextPosition;
+            }
+            else if (GameManager.s_Singleton.shorterNextDistance <= perfectDistance && GameManager.s_Singleton.shorterDistance > perfectDistance)
+            {
+                while(GameManager.s_Singleton.shorterDistance > perfectDistance)
+                {
+                    Debug.Log("Move Slow");
 
-                direction.Normalize();
+                    nextPosition = transform.position;
+                    nextPosition.x += direction.x * Time.deltaTime;
+                    nextPosition.y += direction.y * Time.deltaTime;
+                    transform.position = nextPosition;
 
-                Vector2 pos = transform.position;
-
-                pos.x += direction.x * moveSpeed * Time.deltaTime;
-                pos.y += direction.y * moveSpeed * Time.deltaTime;
-
-                transform.position = pos;
-
-                direction = Vector2.zero;
+                    GameManager.s_Singleton.GetClosestAtomFromDraggedAtom();
+                }
             }
             else
             {
