@@ -20,6 +20,12 @@ public class GameManager : MonoBehaviour
 
     public static GameManager s_Singleton;
 
+    public float maxSpeedCursor = 5f;
+    private float currentSpeedCursor;
+    Vector3 centerScreenPoint;
+    float maxScreenDistance;
+    Vector3 cursorPos;
+
     private void Awake()
     {
         if (s_Singleton != null)
@@ -37,7 +43,8 @@ public class GameManager : MonoBehaviour
     {
         UIManager_MenuPause.isPaused = false;
         AtomNumber();
-
+        centerScreenPoint = new Vector3 (Screen.width / 2, Screen.height / 2, 0);
+        maxScreenDistance = Vector3.Distance(centerScreenPoint, Vector3.zero);
     }
 
     // Update is called once per frame
@@ -48,6 +55,40 @@ public class GameManager : MonoBehaviour
             GetClosestAtomFromDraggedAtom();
             Debug.Log(closerGameObject.name + " : " + shorterDistance);
         }
+
+        cursorPos = Input.mousePosition;
+        float currentCursorDistance = Vector3.Distance(cursorPos, centerScreenPoint);
+        currentSpeedCursor = (currentCursorDistance / maxScreenDistance) * maxSpeedCursor;
+        var v3 = Camera.main.transform.position;
+
+        if (Input.GetMouseButton(1))
+        {
+            if (cursorPos.y < Screen.height / 2)
+            {
+                v3.y -= currentSpeedCursor * Time.deltaTime;
+                Camera.main.transform.position = v3;
+            }
+
+            if (cursorPos.y > Screen.height / 2)
+            {
+                v3.y += currentSpeedCursor * Time.deltaTime;
+                Camera.main.transform.position = v3;
+            }
+
+            if (cursorPos.x < Screen.width / 2)
+            {
+                v3.x -= currentSpeedCursor * Time.deltaTime;
+                Camera.main.transform.position = v3;
+            }
+
+            if (cursorPos.x > Screen.width / 2)
+            {
+                v3.x += currentSpeedCursor * Time.deltaTime;
+                Camera.main.transform.position = v3;
+            }
+        }
+        
+
     }
 
     public void AddAtome(Transform newAtome)
@@ -67,6 +108,7 @@ public class GameManager : MonoBehaviour
     public void NullifyDraggedTransform()
     {
         currentDraggedTransform = null;
+        
     }
 
     public void GetClosestAtomFromDraggedAtom ()
@@ -110,4 +152,5 @@ public class GameManager : MonoBehaviour
         
         Debug.Log(randNumber);
     }
+    
 }

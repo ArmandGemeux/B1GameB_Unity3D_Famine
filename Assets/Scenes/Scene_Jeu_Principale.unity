@@ -4226,8 +4226,8 @@ Camera:
   m_GameObject: {fileID: 1748949294}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.745283, g: 0.745283, b: 0.745283, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -4655,6 +4655,16 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD:Assets/Scenes/Scene_Jeu_Actif.unity
+  atomeList: []
+  shorterDistance: 0
+  closerGameObject: {fileID: 0}
+  fullItem: {fileID: 0}
+  canDragAtome: 1
+  maxSpeedCursor: 20
+--- !u!4 &1716230711
+Transform:
+=======
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -4679,6 +4689,7 @@ MonoBehaviour:
   m_Text: MAIN MENU
 --- !u!222 &1850685091
 CanvasRenderer:
+>>>>>>> e966d833d5a2a1c5d3b2108076940952182726d1:Assets/Scenes/Scene_Jeu_Principale.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
