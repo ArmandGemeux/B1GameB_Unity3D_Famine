@@ -220,10 +220,16 @@ MonoBehaviour:
   atomeList: []
   shorterDistance: 0
   shorterNextDistance: 0
+  perfectDistanceAbs: 4
+  maxAtomeRange: 0
   closerGameObject: {fileID: 0}
   fullItem: {fileID: 0}
   canDragAtome: 1
   maxSpeedCursor: 5
+  oneLink: {fileID: 0}
+  twoLink: {fileID: 0}
+  threeLink: {fileID: 0}
+  fourLink: {fileID: 0}
 --- !u!4 &517905374
 Transform:
   m_ObjectHideFlags: 0
@@ -280,10 +286,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e3a669f34ff3a419a105dffe780cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectDistance: 4
   direction: {x: 1, y: 1}
   moveSpeed: 10
   verfiedDistance: 0
+  canLink: 0
 --- !u!135 &613430349
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -447,10 +453,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e3a669f34ff3a419a105dffe780cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectDistance: 4
   direction: {x: 1, y: 1}
   moveSpeed: 10
   verfiedDistance: 0
+  canLink: 0
 --- !u!135 &1207719462
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -579,10 +585,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e3a669f34ff3a419a105dffe780cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectDistance: 4
   direction: {x: 1, y: 1}
   moveSpeed: 10
   verfiedDistance: 0
+  canLink: 0
 --- !u!135 &1547399812
 SphereCollider:
   m_ObjectHideFlags: 0

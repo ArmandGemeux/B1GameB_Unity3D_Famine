@@ -315,11 +315,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 210269783}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -496.34357, y: -322.02478, z: 3.4099035}
+  m_LocalPosition: {x: 1.1765442, y: 0.28884888, z: -0.023946762}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2047958883}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &210269785
 MonoBehaviour:
@@ -335,10 +335,15 @@ MonoBehaviour:
   atomeList: []
   shorterDistance: 0
   shorterNextDistance: 0
+  perfectDistanceAbs: 4
   closerGameObject: {fileID: 0}
   fullItem: {fileID: 0}
   canDragAtome: 1
   maxSpeedCursor: 5
+  oneLink: {fileID: 0}
+  twoLink: {fileID: 0}
+  threeLink: {fileID: 0}
+  fourLink: {fileID: 0}
 --- !u!1 &262415556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1850,7 +1855,7 @@ Transform:
   - {fileID: 1475896500}
   - {fileID: 1836018691}
   m_Father: {fileID: 2047958883}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &502529563
 GameObject:
@@ -2358,7 +2363,7 @@ Transform:
   - {fileID: 2067495150}
   - {fileID: 1839339048}
   m_Father: {fileID: 2047958883}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &957063670
 GameObject:
@@ -2697,7 +2702,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2047958883}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1249482151
 MonoBehaviour:
@@ -4486,6 +4491,7 @@ GameObject:
   - component: {fileID: 1839339051}
   - component: {fileID: 1839339050}
   - component: {fileID: 1839339049}
+  - component: {fileID: 1839339053}
   m_Layer: 0
   m_Name: Atome (2)
   m_TagString: Atomium
@@ -4500,7 +4506,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1839339047}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: 0, z: 0}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 932687455}
@@ -4517,9 +4523,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e3a669f34ff3a419a105dffe780cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forbidenShortDistance: 3
-  forbidenLongDistance: 5
-  perfectDistance: 0
   direction: {x: 1, y: 1}
   moveSpeed: 3
   verfiedDistance: 0
@@ -4577,6 +4580,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1839339047}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1839339053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1839339047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed712a7d7c3c77c4195a97d228d042dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1878152901
 GameObject:
   m_ObjectHideFlags: 0
@@ -4589,6 +4603,7 @@ GameObject:
   - component: {fileID: 1878152905}
   - component: {fileID: 1878152904}
   - component: {fileID: 1878152903}
+  - component: {fileID: 1878152907}
   m_Layer: 0
   m_Name: Atome
   m_TagString: Untagged
@@ -4620,9 +4635,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e3a669f34ff3a419a105dffe780cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forbidenShortDistance: 3
-  forbidenLongDistance: 5
-  perfectDistance: 0
   direction: {x: 1, y: 1}
   moveSpeed: 3
   verfiedDistance: 0
@@ -4680,6 +4692,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1878152901}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1878152907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1878152901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed712a7d7c3c77c4195a97d228d042dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1923374244
 GameObject:
   m_ObjectHideFlags: 0
@@ -5196,7 +5219,6 @@ Transform:
   - {fileID: 1420735661}
   - {fileID: 398655191}
   - {fileID: 1534815522}
-  - {fileID: 210269784}
   - {fileID: 1249482150}
   - {fileID: 932687455}
   - {fileID: 490250414}
@@ -5215,6 +5237,7 @@ GameObject:
   - component: {fileID: 2067495153}
   - component: {fileID: 2067495152}
   - component: {fileID: 2067495151}
+  - component: {fileID: 2067495155}
   m_Layer: 0
   m_Name: Atome (1)
   m_TagString: Atomium
@@ -5229,7 +5252,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2067495149}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: 0}
+  m_LocalPosition: {x: 5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 932687455}
@@ -5246,9 +5269,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e3a669f34ff3a419a105dffe780cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forbidenShortDistance: 3
-  forbidenLongDistance: 5
-  perfectDistance: 0
   direction: {x: 1, y: 1}
   moveSpeed: 3
   verfiedDistance: 0
@@ -5306,6 +5326,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2067495149}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2067495155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2067495149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed712a7d7c3c77c4195a97d228d042dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2121185809
 GameObject:
   m_ObjectHideFlags: 0
