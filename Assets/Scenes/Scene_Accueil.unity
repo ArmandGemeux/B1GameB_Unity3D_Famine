@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 638395007}
   - component: {fileID: 638395006}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BG_Acceuil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
