@@ -20,14 +20,11 @@ public class MouvementController : MonoBehaviour
 
     private Vector2 nextPosition;
 
-    public int canLink;
-
     void Start()
     {
         AddInList(); // Ajoute l'atome possédant le script à une liste dans le GameManager.
         perfectDistance = GameManager.s_Singleton.perfectDistanceAbs;
         atomeRange = GameManager.s_Singleton.maxAtomeRange;
-        AtomNumber();
     }
 
     void Update()
@@ -70,6 +67,7 @@ public class MouvementController : MonoBehaviour
             GameManager.s_Singleton.canDragAtome = false;
 
             GameManager.s_Singleton.GetClosestAtomFromDraggedAtom();
+            GameManager.s_Singleton.DistanceToGoodAtome();
 
             if (GameManager.s_Singleton.shorterDistance > perfectDistance && GameManager.s_Singleton.shorterDistance < atomeRange)
             {
@@ -82,10 +80,26 @@ public class MouvementController : MonoBehaviour
                 nextPosition.y += direction.y * moveSpeed * Time.deltaTime;
 
                 GameManager.s_Singleton.VerifyDistance(nextPosition, transform);
+                GameManager.s_Singleton.VerifyDistanceToGoodAtome(nextPosition, transform);
 
                 if (GameManager.s_Singleton.shorterNextDistance > perfectDistance)
                 {
                     transform.position = nextPosition;
+
+                    GameManager.s_Singleton.DistanceToGoodAtome();
+
+                    if(GameManager.s_Singleton.shorterTrueDistance < perfectDistance)
+                    {
+                        direction = GameManager.s_Singleton.closerTrueGameObject.transform.position - transform.position;
+                        direction = -direction;
+                        direction.Normalize();
+
+                        nextPosition = transform.position;
+                        nextPosition.x += direction.x * moveSpeed * Time.deltaTime;
+                        nextPosition.y += direction.y * moveSpeed * Time.deltaTime;
+
+                        transform.position = nextPosition;
+                    }
                 }
                 else if (GameManager.s_Singleton.shorterNextDistance <= perfectDistance && GameManager.s_Singleton.shorterDistance > perfectDistance)
                 {
@@ -97,6 +111,7 @@ public class MouvementController : MonoBehaviour
                         transform.position = nextPosition;
 
                         GameManager.s_Singleton.GetClosestAtomFromDraggedAtom();
+                        GameManager.s_Singleton.DistanceToGoodAtome();
                     }
 
                     neverAct = false;
@@ -104,6 +119,7 @@ public class MouvementController : MonoBehaviour
                     gameObject.tag = "Untagged";
                     canMove = false;
                     GameManager.s_Singleton.canDragAtome = true;
+                    GameManager.s_Singleton.DelAtome(transform);
                 }
                 else
                 {
@@ -111,6 +127,7 @@ public class MouvementController : MonoBehaviour
                     gameObject.tag = "Untagged";
                     canMove = false;
                     GameManager.s_Singleton.canDragAtome = true;
+                    GameManager.s_Singleton.DelAtome(transform);
                 }
             }
             else if (GameManager.s_Singleton.shorterDistance < perfectDistance)
@@ -124,6 +141,7 @@ public class MouvementController : MonoBehaviour
                 nextPosition.y += direction.y * moveSpeed * Time.deltaTime;
 
                 GameManager.s_Singleton.VerifyDistance(nextPosition, transform);
+                GameManager.s_Singleton.VerifyDistanceToGoodAtome(nextPosition, transform);
 
                 if (GameManager.s_Singleton.shorterNextDistance < perfectDistance)
                 {
@@ -139,6 +157,7 @@ public class MouvementController : MonoBehaviour
                         transform.position = nextPosition;
 
                         GameManager.s_Singleton.GetClosestAtomFromDraggedAtom();
+                        GameManager.s_Singleton.DistanceToGoodAtome();
                     }
 
                     neverAct = false;
@@ -146,6 +165,7 @@ public class MouvementController : MonoBehaviour
                     gameObject.tag = "Untagged";
                     canMove = false;
                     GameManager.s_Singleton.canDragAtome = true;
+                    GameManager.s_Singleton.DelAtome(transform);
                 }
                 else
                 {
@@ -153,25 +173,15 @@ public class MouvementController : MonoBehaviour
                     gameObject.tag = "Untagged";
                     canMove = false;
                     GameManager.s_Singleton.canDragAtome = true;
+                    GameManager.s_Singleton.DelAtome(transform);
                 }
             }
             else
             {
+                Debug.Log("Je retourne dans ma boite!");
 
-                /*
-                GameManager.s_Singleton.NullifyDraggedTransform();
-                gameObject.tag = "Untagged";
-                canMove = false;
-                GameManager.s_Singleton.canDragAtome = true;
-                */
+                
             }
         }
-    }
-
-    private void AtomNumber()
-    {
-        int randNumber = Random.Range(0, 4);
-        canLink = randNumber;
-        Debug.Log(canLink);
     }
 }
