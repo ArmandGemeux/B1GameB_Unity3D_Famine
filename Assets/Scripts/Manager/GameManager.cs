@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public float shorterDistance = 0f;
     public float shorterNextDistance = 0f;
 
+    public float perfectDistanceAbs;
+    public int maxAtomeRange;
+
     public GameObject closerGameObject;
 
     public GameObject fullItem;
@@ -26,6 +29,17 @@ public class GameManager : MonoBehaviour
     Vector3 centerScreenPoint;
     float maxScreenDistance;
     Vector3 cursorPos;
+
+    public GameObject oneLink;
+    public GameObject twoLink;
+    public GameObject threeLink;
+    public GameObject fourLink;
+
+    /*
+    
+
+    public int valueFinal;
+    */
 
     private void Awake()
     {
@@ -43,7 +57,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         UIManager.isPaused = false;
-        AtomNumber();
         centerScreenPoint = new Vector3 (Screen.width / 2, Screen.height / 2, 0);
         maxScreenDistance = Vector3.Distance(centerScreenPoint, Vector3.zero);
     }
@@ -88,8 +101,6 @@ public class GameManager : MonoBehaviour
                 Camera.main.transform.position = v3;
             }
         }
-        
-
     }
 
     public void AddAtome(Transform newAtome)
@@ -98,6 +109,14 @@ public class GameManager : MonoBehaviour
         {
             atomeList.Add(newAtome);
             Debug.Log(newAtome);
+        }
+    }
+
+    public void DelAtome(Transform oldAtome)
+    {
+        if (atomeList.Contains(oldAtome))
+        {
+            atomeList.Remove(oldAtome);
         }
     }
 
@@ -162,12 +181,4 @@ public class GameManager : MonoBehaviour
     {
         currentCard = cCard;
     }
-
-    public void AtomNumber()
-    {
-        int randNumber = Random.Range(0, 4);
-        
-        Debug.Log(randNumber);
-    }
-    
 }
