@@ -124,7 +124,11 @@ GameObject:
   - component: {fileID: 638395007}
   - component: {fileID: 638395006}
   m_Layer: 5
+<<<<<<< HEAD
   m_Name: BG_Accueil
+=======
+  m_Name: BG_Acceuil
+>>>>>>> 699cef762c2fa2fb416a27aa88242054aeb045af
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
