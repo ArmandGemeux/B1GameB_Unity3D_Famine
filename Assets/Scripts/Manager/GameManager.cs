@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UIManager_MenuPause.isPaused = false;
+        UIManager.isPaused = false;
         AtomNumber();
         centerScreenPoint = new Vector3 (Screen.width / 2, Screen.height / 2, 0);
         maxScreenDistance = Vector3.Distance(centerScreenPoint, Vector3.zero);
