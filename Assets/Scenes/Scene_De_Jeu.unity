@@ -583,10 +583,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e3a669f34ff3a419a105dffe780cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectDistance: 0
   direction: {x: 1, y: 1}
   moveSpeed: 3
   verfiedDistance: 0
+  canLink: 0
 --- !u!135 &145454758
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -862,7 +862,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e62aa2bb241ebc949936cfecb0360d7e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 99c20e1ea54844345b49af684cb71e2b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1195,7 +1195,7 @@ Transform:
   - {fileID: 1394802155}
   - {fileID: 2135593614}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &259156859
 GameObject:
@@ -1270,7 +1270,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d8bb4a9cd84212a4e99de5c47e7790fd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6cbf690d16b01c74b85545ac5b71a561, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1399,10 +1399,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e3a669f34ff3a419a105dffe780cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectDistance: 0
   direction: {x: 1, y: 1}
   moveSpeed: 3
   verfiedDistance: 0
+  canLink: 0
 --- !u!135 &317428204
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1870,7 +1870,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d8bb4a9cd84212a4e99de5c47e7790fd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6cbf690d16b01c74b85545ac5b71a561, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2497,9 +2497,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 811905266}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1192651989}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2561,7 +2562,7 @@ MonoBehaviour:
           m_MethodName: PlayOneShot
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: e62aa2bb241ebc949936cfecb0360d7e,
+            m_ObjectArgument: {fileID: 8300000, guid: 99c20e1ea54844345b49af684cb71e2b,
               type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
@@ -2626,7 +2627,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: d8bb4a9cd84212a4e99de5c47e7790fd,
+          m_ObjectArgument: {fileID: 8300000, guid: 6cbf690d16b01c74b85545ac5b71a561,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
@@ -3277,7 +3278,7 @@ MonoBehaviour:
           m_MethodName: PlayOneShot
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: e62aa2bb241ebc949936cfecb0360d7e,
+            m_ObjectArgument: {fileID: 8300000, guid: 99c20e1ea54844345b49af684cb71e2b,
               type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
@@ -3342,7 +3343,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: d8bb4a9cd84212a4e99de5c47e7790fd,
+          m_ObjectArgument: {fileID: 8300000, guid: 6cbf690d16b01c74b85545ac5b71a561,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
@@ -3555,11 +3556,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1192651986}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 15}
   m_LocalScale: {x: 53.87521, y: 33.020016, z: 22.013344}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 811905269}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1202562706
 GameObject:
@@ -4100,10 +4101,16 @@ MonoBehaviour:
   atomeList: []
   shorterDistance: 0
   shorterNextDistance: 0
+  perfectDistanceAbs: 0
+  maxAtomeRange: 0
   closerGameObject: {fileID: 0}
   fullItem: {fileID: 0}
   canDragAtome: 1
   maxSpeedCursor: 5
+  oneLink: {fileID: 0}
+  twoLink: {fileID: 0}
+  threeLink: {fileID: 0}
+  fourLink: {fileID: 0}
 --- !u!1 &1369150237
 GameObject:
   m_ObjectHideFlags: 0
@@ -4162,7 +4169,7 @@ MonoBehaviour:
           m_MethodName: PlayOneShot
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: e62aa2bb241ebc949936cfecb0360d7e,
+            m_ObjectArgument: {fileID: 8300000, guid: 99c20e1ea54844345b49af684cb71e2b,
               type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
@@ -4227,7 +4234,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: d8bb4a9cd84212a4e99de5c47e7790fd,
+          m_ObjectArgument: {fileID: 8300000, guid: 6cbf690d16b01c74b85545ac5b71a561,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
@@ -4563,7 +4570,7 @@ MonoBehaviour:
           m_MethodName: PlayOneShot
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: e62aa2bb241ebc949936cfecb0360d7e,
+            m_ObjectArgument: {fileID: 8300000, guid: 99c20e1ea54844345b49af684cb71e2b,
               type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
@@ -4628,7 +4635,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: d8bb4a9cd84212a4e99de5c47e7790fd,
+          m_ObjectArgument: {fileID: 8300000, guid: 6cbf690d16b01c74b85545ac5b71a561,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
@@ -5439,7 +5446,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e62aa2bb241ebc949936cfecb0360d7e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 99c20e1ea54844345b49af684cb71e2b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -5602,7 +5609,7 @@ MonoBehaviour:
           m_MethodName: PlayOneShot
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: e62aa2bb241ebc949936cfecb0360d7e,
+            m_ObjectArgument: {fileID: 8300000, guid: 99c20e1ea54844345b49af684cb71e2b,
               type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
@@ -5667,7 +5674,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: d8bb4a9cd84212a4e99de5c47e7790fd,
+          m_ObjectArgument: {fileID: 8300000, guid: 6cbf690d16b01c74b85545ac5b71a561,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
@@ -5754,10 +5761,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e3a669f34ff3a419a105dffe780cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectDistance: 0
   direction: {x: 1, y: 1}
   moveSpeed: 3
   verfiedDistance: 0
+  canLink: 0
 --- !u!135 &2027406986
 SphereCollider:
   m_ObjectHideFlags: 0
