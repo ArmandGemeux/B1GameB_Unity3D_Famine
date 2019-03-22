@@ -190,7 +190,7 @@ MonoBehaviour:
           m_MethodName: PlayOneShot
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: e62aa2bb241ebc949936cfecb0360d7e,
+            m_ObjectArgument: {fileID: 8300000, guid: 99c20e1ea54844345b49af684cb71e2b,
               type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
@@ -255,7 +255,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: d8bb4a9cd84212a4e99de5c47e7790fd,
+          m_ObjectArgument: {fileID: 8300000, guid: 6cbf690d16b01c74b85545ac5b71a561,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
@@ -602,7 +602,7 @@ MonoBehaviour:
           m_MethodName: PlayOneShot
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: e62aa2bb241ebc949936cfecb0360d7e,
+            m_ObjectArgument: {fileID: 8300000, guid: 99c20e1ea54844345b49af684cb71e2b,
               type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
@@ -667,7 +667,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: d8bb4a9cd84212a4e99de5c47e7790fd,
+          m_ObjectArgument: {fileID: 8300000, guid: 6cbf690d16b01c74b85545ac5b71a561,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
@@ -872,7 +872,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e62aa2bb241ebc949936cfecb0360d7e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 99c20e1ea54844345b49af684cb71e2b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1135,7 +1135,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d8bb4a9cd84212a4e99de5c47e7790fd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6cbf690d16b01c74b85545ac5b71a561, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

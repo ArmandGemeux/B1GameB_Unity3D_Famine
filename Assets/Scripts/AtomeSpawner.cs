@@ -8,7 +8,7 @@ public class AtomeSpawner : MonoBehaviour {
 
     public GameObject atome;
     public GameObject atome3D;
-    Vector3 posM;
+    Vector3 posM ;
     //public RectTransform panelRectTransfom;
 
     // Use this for initialization

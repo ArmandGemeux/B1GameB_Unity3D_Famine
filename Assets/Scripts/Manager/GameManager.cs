@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public int linksQuantity;
+    public int scoreByLink;
+    public int atomeScoreValue;
 
     public List<Transform> atomeList;
+    public List<Transform> atomeListCanLink;
     private Transform currentDraggedTransform = null;
 
     public float shorterDistance = 0f;
+    public float shorterTrueDistance = 0f;
+
     public float shorterNextDistance = 0f;
+    public float shorterNextTrueDistance = 0f;
 
     public float perfectDistanceAbs;
     public int maxAtomeRange;
 
     public GameObject closerGameObject;
+    public GameObject closerTrueGameObject;
 
     public GameObject fullItem;
     private GameObject currentCard;
@@ -30,7 +38,6 @@ public class GameManager : MonoBehaviour
     float maxScreenDistance;
     Vector3 cursorPos;
 
-    
     public GameObject oneLink;
     public GameObject twoLink;
     public GameObject threeLink;
@@ -68,7 +75,6 @@ public class GameManager : MonoBehaviour
         if (currentDraggedTransform != null)
         {
             GetClosestAtomFromDraggedAtom();
-            Debug.Log(closerGameObject.name + " : " + shorterDistance);
         }
 
         cursorPos = Input.mousePosition;
@@ -109,6 +115,7 @@ public class GameManager : MonoBehaviour
         if (!atomeList.Contains(newAtome))
         {
             atomeList.Add(newAtome);
+            atomeListCanLink.Add(newAtome);
             Debug.Log(newAtome);
         }
     }
@@ -132,7 +139,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void GetClosestAtomFromDraggedAtom ()
+    public void GetClosestAtomFromDraggedAtom () // Atomes les plus proche valide!!!!
     {
         shorterDistance = 999999f;
         for (int i = 0; i < atomeList.Count; i++)
@@ -149,7 +156,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void VerifyDistance(Vector2 nextDistance, Transform atomeToCheck)
+    public void VerifyDistance(Vector2 nextDistance, Transform atomeToCheck) // Atomes les plus proche valide à la prochaine frame!!!!!
     {
         shorterNextDistance = 999999f;
         for (int i = 0; i < atomeList.Count; i++)
@@ -164,8 +171,41 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    
-   /* public void DisplayItem()
+
+    public void DistanceToGoodAtome ()  // Atomes le plus proche commun!!!!!
+    {
+        shorterTrueDistance = 999999f;
+        for (int i = 0; i < atomeListCanLink.Count; i++)
+        {
+            if (atomeListCanLink[i] != currentDraggedTransform)
+            {
+                float tmpSd = Vector3.Distance(atomeListCanLink[i].position, currentDraggedTransform.position);
+                if (tmpSd < shorterTrueDistance)
+                {
+                    shorterTrueDistance = tmpSd;
+                    closerTrueGameObject = atomeListCanLink[i].gameObject;
+                }
+            }
+        }
+    }
+
+    public void VerifyDistanceToGoodAtome(Vector2 nextDistance, Transform atomeToCheck) //Atomes les plus proche commun à la prochaine frame!!!!!!!
+    {
+        shorterNextTrueDistance = 999999f;
+        for (int i = 0; i < atomeListCanLink.Count; i++)
+        {
+            if (atomeListCanLink[i] != atomeToCheck)
+            {
+                float tmpSnd = Vector3.Distance(atomeListCanLink[i].position, nextDistance);
+                if (tmpSnd < shorterNextTrueDistance)
+                {
+                    shorterNextTrueDistance = tmpSnd;
+                }
+            }
+        }
+    }
+
+    public void DisplayItem()
     {
         currentFullItem = Instantiate(fullItem);
         currentCard.SetActive(false);
@@ -181,5 +221,5 @@ public class GameManager : MonoBehaviour
     public void FillInCurrentCard(GameObject cCard)
     {
         currentCard = cCard;
-    }*/
+    }
 }
