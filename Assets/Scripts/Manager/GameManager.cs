@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     float maxScreenDistance;
     Vector3 cursorPos;
 
+    
     public GameObject oneLink;
     public GameObject twoLink;
     public GameObject threeLink;
@@ -164,7 +165,7 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    public void DisplayItem()
+   /* public void DisplayItem()
     {
         currentFullItem = Instantiate(fullItem);
         currentCard.SetActive(false);
@@ -180,5 +181,5 @@ public class GameManager : MonoBehaviour
     public void FillInCurrentCard(GameObject cCard)
     {
         currentCard = cCard;
-    }
+    }*/
 }

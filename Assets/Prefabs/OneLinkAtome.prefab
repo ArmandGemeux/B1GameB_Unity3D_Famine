@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23938664721485056}
   - component: {fileID: 135310742855377932}
   - component: {fileID: 114750547756049034}
+  - component: {fileID: 114867922280649928}
   m_Layer: 0
   m_Name: OneLinkAtome
   m_TagString: Untagged
@@ -99,6 +100,17 @@ MonoBehaviour:
   linksQuantity: 1
   scoreByLink: 15
   atomeScoreValue: 25
+--- !u!114 &114867922280649928
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1608229185630414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83c94b91aaaf6c5499db6278b2c16689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135310742855377932
 SphereCollider:
   m_ObjectHideFlags: 1

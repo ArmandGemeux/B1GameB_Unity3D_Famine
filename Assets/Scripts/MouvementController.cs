@@ -20,14 +20,11 @@ public class MouvementController : MonoBehaviour
 
     private Vector2 nextPosition;
 
-    public int canLink;
-
     void Start()
     {
         AddInList(); // Ajoute l'atome possédant le script à une liste dans le GameManager.
         perfectDistance = GameManager.s_Singleton.perfectDistanceAbs;
         atomeRange = GameManager.s_Singleton.maxAtomeRange;
-        AtomNumber();
     }
 
     void Update()
@@ -168,10 +165,4 @@ public class MouvementController : MonoBehaviour
         }
     }
 
-    private void AtomNumber()
-    {
-        int randNumber = Random.Range(0, 4);
-        canLink = randNumber;
-        Debug.Log(canLink);
-    }
 }
