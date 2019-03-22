@@ -10,7 +10,7 @@ public class MouvementController : MonoBehaviour
     private float perfectDistance;
     private int atomeRange;
 
-    public Vector2 direction = Vector2.zero;
+    private Vector2 direction = Vector2.zero;
     public float moveSpeed = 0f;
     private bool canMove = true;
     private bool moving = false;
@@ -19,6 +19,9 @@ public class MouvementController : MonoBehaviour
     public float verfiedDistance;
 
     private Vector2 nextPosition;
+
+    public int linksQuantity;
+    public int scoreByLink;
 
     void Start()
     {

@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int linksQuantity;
-    public int scoreByLink;
-    public int atomeScoreValue;
+    public int globalScore = 0;
 
     public List<Transform> atomeList;
     public List<Transform> atomeListCanLink;
@@ -18,15 +16,11 @@ public class GameManager : MonoBehaviour
     public float shorterNextDistance = 0f;
     public float shorterNextTrueDistance = 0f;
 
-    public float perfectDistanceAbs;
-    public int maxAtomeRange;
+    public float perfectDistanceAbs = 4;
+    public int maxAtomeRange = 6;
 
     public GameObject closerGameObject;
     public GameObject closerTrueGameObject;
-
-    public GameObject fullItem;
-    private GameObject currentCard;
-    private GameObject currentFullItem;
 
     public bool canDragAtome = true;
 
@@ -139,7 +133,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void GetClosestAtomFromDraggedAtom () // Atomes les plus proche valide!!!!
+    public void GetClosestAtomFromDraggedAtom() // Atomes les plus proche valide!!!!
     {
         shorterDistance = 999999f;
         for (int i = 0; i < atomeList.Count; i++)
@@ -203,23 +197,5 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-    }
-
-    public void DisplayItem()
-    {
-        currentFullItem = Instantiate(fullItem);
-        currentCard.SetActive(false);
-    }
-
-    public void HideItem()
-    {
-        Destroy(currentFullItem);
-        currentCard.SetActive(true);
-
-    }
-
-    public void FillInCurrentCard(GameObject cCard)
-    {
-        currentCard = cCard;
     }
 }
