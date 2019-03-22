@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33469009118004730}
   - component: {fileID: 23821202248510396}
   - component: {fileID: 135517050891034154}
-  - component: {fileID: 114256389647569900}
   m_Layer: 0
   m_Name: FourLinkAtome
   m_TagString: Untagged
@@ -85,20 +84,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1974448044793086}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114256389647569900
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1974448044793086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e71386cea5d473340bfd3cbb966dfe46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  linksQuantity: 4
-  scoreByLink: 60
-  atomeScoreValue: 100
 --- !u!135 &135517050891034154
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ItemFollowMouse : MonoBehaviour {
 
+    private bool doOnce = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -11,12 +13,17 @@ public class ItemFollowMouse : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButton(0))
+		if (Input.GetMouseButtonDown(0) && doOnce == false)
         {
             var mPos = Input.mousePosition;
             mPos.z = 10f;
             mPos = Camera.main.ScreenToWorldPoint(mPos);
             transform.position = mPos;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            doOnce = true;
         }
 	}
 }
