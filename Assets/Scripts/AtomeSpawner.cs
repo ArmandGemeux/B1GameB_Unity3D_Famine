@@ -6,9 +6,15 @@ using UnityEngine.UI;
 public class AtomeSpawner : MonoBehaviour {
 
 
-    public GameObject atome;
-    public GameObject atome3D;
-    Vector3 posM ;
+    
+    Vector3 posM = Vector3.zero;
+    int atomeNumber;
+
+
+    public List<GameObject> atomeSpriteList;
+    public List<GameObject> atome3DList;
+
+
     //public RectTransform panelRectTransfom;
 
     // Use this for initialization
@@ -24,25 +30,27 @@ public class AtomeSpawner : MonoBehaviour {
 
     private void AtomeNumber()
     {
-        int atomeNumber = Random.Range(0, 4);
+        atomeNumber = Random.Range(0, 4);
         Debug.Log(atomeNumber);
-        Instantiate(atome, transform);
+        Instantiate(atomeSpriteList[atomeNumber], transform);
     }
 
    
 
     public void OnMouseExit()
     {
-        Instantiate(atome3D, posM, Quaternion.identity);
-        atome.transform.position = transform.position;
+        Instantiate(atome3DList[atomeNumber], posM, Quaternion.identity);
+        atomeSpriteList[atomeNumber].transform.position = transform.position;
         
     }
 
     public void OnMouseOver()
     {
         Vector3 posM = Input.mousePosition;
-        atome.transform.position = posM;
+        atomeSpriteList[atomeNumber].transform.position = posM;
     }
+
+
 
 }
 
