@@ -12,6 +12,7 @@ public class AtomeSpawner : MonoBehaviour {
     public List<GameObject> atomeSpriteList;
     public List<GameObject> atome3DList;
 
+    bool atomeCheck;
 
     //public RectTransform panelRectTransfom;
 
@@ -44,9 +45,12 @@ public class AtomeSpawner : MonoBehaviour {
 
     public void OnMouseOver()
     {
+        
         Vector3 posM = Input.mousePosition;
         atomeSpriteList[atomeNumber].transform.position = posM;
     }
+
+    
 
 
 
