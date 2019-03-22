@@ -23,7 +23,9 @@ public class ItemFollowMouse : MonoBehaviour {
 
         if (Input.GetMouseButtonUp(0))
         {
+            Debug.Log("C'est fini maintenant!");
             doOnce = true;
+            GetComponent<MouvementController>().moving = true;
         }
 	}
 }

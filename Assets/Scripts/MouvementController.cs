@@ -12,9 +12,9 @@ public class MouvementController : MonoBehaviour
 
     private Vector2 direction = Vector2.zero;
     public float moveSpeed = 0f;
-    private bool canMove = true;
-    private bool moving = false;
-    private bool neverAct = true;
+    public bool canMove = true;
+    public bool moving = false;
+    public bool neverAct = true;
 
     public float verfiedDistance;
 
@@ -38,6 +38,7 @@ public class MouvementController : MonoBehaviour
             mPos.z = 10f;
             mPos = Camera.main.ScreenToWorldPoint(mPos);
             transform.position = mPos;
+            Debug.Log(transform.position);
         }
 
         MoveToGoodPos(); // Déplacement de l'atome vers sa position idéale.

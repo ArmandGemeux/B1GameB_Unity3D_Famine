@@ -22,9 +22,11 @@ GameObject:
   - component: {fileID: 33469009118004730}
   - component: {fileID: 23821202248510396}
   - component: {fileID: 135517050891034154}
+  - component: {fileID: 114226578193920716}
+  - component: {fileID: 114403263023800134}
   m_Layer: 0
   m_Name: FourLinkAtome
-  m_TagString: Untagged
+  m_TagString: Atomium
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,6 +86,32 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1974448044793086}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114226578193920716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1974448044793086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e3a669f34ff3a419a105dffe780cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  verfiedDistance: 0
+  linksQuantity: 0
+  scoreByLink: 0
+--- !u!114 &114403263023800134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1974448044793086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83c94b91aaaf6c5499db6278b2c16689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135517050891034154
 SphereCollider:
   m_ObjectHideFlags: 1

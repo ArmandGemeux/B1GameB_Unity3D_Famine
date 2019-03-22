@@ -32,17 +32,6 @@ public class GameManager : MonoBehaviour
     float maxScreenDistance;
     Vector3 cursorPos;
 
-    public GameObject oneLink;
-    public GameObject twoLink;
-    public GameObject threeLink;
-    public GameObject fourLink;
-
-    /*
-    
-
-    public int valueFinal;
-    */
-
     private void Awake()
     {
         if (s_Singleton != null)

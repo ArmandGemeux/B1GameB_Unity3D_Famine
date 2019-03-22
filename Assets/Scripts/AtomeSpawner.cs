@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class AtomeSpawner : MonoBehaviour {
-
-
     
     Vector3 posM = Vector3.zero;
     int atomeNumber;
@@ -32,7 +30,7 @@ public class AtomeSpawner : MonoBehaviour {
     {
         atomeNumber = Random.Range(0, 4);
         Debug.Log(atomeNumber);
-        Instantiate(atomeSpriteList[atomeNumber], transform);
+        Instantiate(atomeSpriteList[atomeNumber], GetComponentInChildren<Transform>());
     }
 
    
